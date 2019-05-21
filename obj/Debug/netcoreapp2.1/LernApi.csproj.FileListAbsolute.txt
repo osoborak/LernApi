@@ -1,0 +1,14 @@
+C:\Lern\PawelLern\LernApi\bin\Debug\netcoreapp2.1\LernApi.deps.json
+C:\Lern\PawelLern\LernApi\bin\Debug\netcoreapp2.1\LernApi.runtimeconfig.json
+C:\Lern\PawelLern\LernApi\bin\Debug\netcoreapp2.1\LernApi.runtimeconfig.dev.json
+C:\Lern\PawelLern\LernApi\bin\Debug\netcoreapp2.1\LernApi.dll
+C:\Lern\PawelLern\LernApi\bin\Debug\netcoreapp2.1\LernApi.pdb
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.csprojAssemblyReference.cache
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.csproj.CoreCompileInputs.cache
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorAssemblyInfo.cache
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorAssemblyInfo.cs
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.AssemblyInfoInputs.cache
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.AssemblyInfo.cs
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorTargetAssemblyInfo.cache
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.dll
+C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.pdb
