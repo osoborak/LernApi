@@ -135,6 +135,39 @@ namespace LernApi.Services
             }
         }
 
+        public void Update(User userParam, string password = null)
+        {
+            var user = _userContext.Users.Find(userParam.Id);
+
+            if (user == null)
+                throw new Exception("User not found");
+
+            if (userParam.UserName != user.UserName)
+            {
+                // UserName has changed so check if the new UserName is already taken
+                if (_userContext.Users.Any(x => x.UserName == userParam.UserName))
+                    throw new Exception("Username " + userParam.UserName + " is already taken");
+            }
+
+            // update user properties
+            user.FirstName = userParam.FirstName;
+            user.LastName = userParam.LastName;
+            user.UserName = userParam.UserName;
+
+            // update password if it was entered
+            if (!string.IsNullOrWhiteSpace(password))
+            {
+                byte[] passwordHash, passwordSalt;
+                CreatePasswordHash(password, out passwordHash, out passwordSalt);
+
+                user.PasswordHash = passwordHash;
+                user.PasswordSalt = passwordSalt;
+            }
+
+            _userContext.Users.Update(user);
+            _userContext.SaveChanges();
+        }
+
         public User Create(UserInfo userInfo)
         {
             var password = userInfo.Password;

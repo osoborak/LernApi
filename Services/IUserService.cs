@@ -12,5 +12,7 @@ namespace LernApi.Services
         User GetUser(int id);
         User Create(UserInfo userInfo);
         void Delete(int id);
+        void Update(User user, string password);
+
     }
 }
