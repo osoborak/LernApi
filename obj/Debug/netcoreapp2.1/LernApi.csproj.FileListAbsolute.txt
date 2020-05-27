@@ -12,3 +12,22 @@ C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.AssemblyInfo.cs
 C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorTargetAssemblyInfo.cache
 C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.dll
 C:\Lern\PawelLern\LernApi\obj\Debug\netcoreapp2.1\LernApi.pdb
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\appsettings.Development.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\appsettings.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\LernApi.deps.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\LernApi.runtimeconfig.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\LernApi.runtimeconfig.dev.json
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\LernApi.dll
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\bin\Debug\netcoreapp2.1\LernApi.pdb
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.AssemblyInfoInputs.cache
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.AssemblyInfo.cs
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorAssemblyInfo.cache
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorAssemblyInfo.cs
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.RazorTargetAssemblyInfo.cache
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.dll
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.pdb
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.genruntimeconfig.cache
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.csproj.CoreCompileInputs.cache
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+Z:\OneDrive - University of Gdansk\Semestr6\Testowanie\LernApi\obj\Debug\netcoreapp2.1\LernApi.csprojAssemblyReference.cache

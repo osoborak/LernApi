@@ -27,7 +27,7 @@ namespace LernApi
         {
              services.AddCors();
             services.AddDbContext<UserContext>(x =>
-            x.UseSqlServer(Configuration.GetConnectionString("UserContext")));
+            x.UseSqlite(Configuration.GetConnectionString("UserContext")));
             services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
