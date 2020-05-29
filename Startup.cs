@@ -1,15 +1,17 @@
 ﻿using System.Text;
 using AutoMapper;
+using LernApi.CustomServices;
 using LernApi.Models.Context;
 using LernApi.Services;
 using LernApi.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
 namespace LernApi
@@ -22,17 +24,21 @@ namespace LernApi
         }
 
         public IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddCors();
+            services.AddControllers();
+            services.AddCors();
+
             services.AddDbContext<UserContext>(x =>
-            x.UseSqlite(Configuration.GetConnectionString("UserContext")));
+            x.UseSqlServer(Configuration.GetConnectionString("UserContext")));
+
             services.AddAutoMapper();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-
+            services.AddAzureClients(builder =>
+            {
+                builder.AddBlobServiceClient(Configuration.GetConnectionString("blobCS"));
+            });
 
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
@@ -40,8 +46,6 @@ namespace LernApi
 
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-
-
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -60,11 +64,11 @@ namespace LernApi
                     ValidateAudience = false
                 };
             });
-
             services.AddScoped<IUserService, UserService>();
+            services.AddLernBlobStorage();
         }
-      
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -75,22 +79,20 @@ namespace LernApi
                 app.UseHsts();
             }
 
-                app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
+            app.UseRouting();
             app.UseAuthentication();
-
-            app.UseMvc();
-
-            //     app.UseCors(builder =>
-            //     builder.WithOrigins("*"));
-            //     app.UseAuthentication();
-            //    app.UseHttpsRedirection();
+            app.UseAuthorization();
 
 
-            // app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
 
 
         }

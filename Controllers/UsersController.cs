@@ -2,7 +2,6 @@
 using AutoMapper;
 using LernApi.Models;
 using LernApi.Models.DTO;
-using LernApi.Models.DTO.Mappers;
 using LernApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
