@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LernApi.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20200529193547_initial")]
+    [Migration("20200530111252_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -31,7 +31,7 @@ namespace LernApi
             services.AddCors();
 
             services.AddDbContext<UserContext>(x =>
-            x.UseSqlServer(Configuration.GetConnectionString("UserContext")));
+            x.UseSqlServer(Configuration.GetConnectionString("LernApi_db")));
 
             services.AddAutoMapper();
 
