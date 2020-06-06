@@ -7,7 +7,6 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace LernApi.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase

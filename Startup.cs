@@ -30,8 +30,8 @@ namespace LernApi
             services.AddControllers();
             services.AddCors();
 
-            services.AddDbContext<UserContext>(x =>
-            x.UseSqlServer(Configuration.GetConnectionString("LernApi_db")));
+            services.AddDbContext<MyContext>(x =>
+            x.UseSqlite(Configuration.GetConnectionString("MyContext")));
 
             services.AddAutoMapper();
 
@@ -65,7 +65,10 @@ namespace LernApi
                 };
             });
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdvService, AdvService>();
             services.AddLernBlobStorage();
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

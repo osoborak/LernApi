@@ -21,9 +21,9 @@ namespace LernApi
 
                 try
                 {
-                    var context = services.GetRequiredService<UserContext>();
+                    var context = services.GetRequiredService<MyContext>();
                     context.Database.Migrate();
-                    UserDataSeeder.Initialize(services);
+                    DataSeeder.Initialize(services);
 
                 } catch(Exception ex)
                 {

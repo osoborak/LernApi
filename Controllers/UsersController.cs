@@ -31,7 +31,7 @@ namespace LernApi.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] UserInfo userParam)
         {
-            var user = _userService.Authenticate(userParam.UserName, userParam.Password);
+            var user = _userService.Authenticate(userParam.Login, userParam.Password);
 
             if (user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
