@@ -9,7 +9,7 @@
             Id = user.Id;
             FirstName = user.FirstName;
             LastName = user.LastName;
-            UserName = user.UserName;
+            Login = user.Login;
             PasswordHash = user.PasswordHash;
             PasswordSalt = user.PasswordSalt;
             Token = token;

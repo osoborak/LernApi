@@ -17,14 +17,11 @@ namespace LernApi.Services
     public class UserService : IUserService
     {
 
-        private readonly UserContext _userContext;
+        private readonly MyContext _userContext;
         private IMapper _mapper;
         private readonly AppSettings _appSettings;
 
-        public UserService(
-            UserContext UserContext,
-            IMapper mapper,
-             IOptions<AppSettings> appSettings)
+        public UserService(MyContext UserContext, IMapper mapper, IOptions<AppSettings> appSettings)
         {
             _userContext = UserContext;
             _mapper = mapper;
@@ -37,7 +34,7 @@ namespace LernApi.Services
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 return null;
 
-            var user = _userContext.Users.SingleOrDefault(x => x.UserName == username);
+            var user = _userContext.Users.SingleOrDefault(x => x.Login == username);
 
             if (user == null)
                 return null;
@@ -142,17 +139,17 @@ namespace LernApi.Services
             if (user == null)
                 throw new Exception("User not found");
 
-            if (userParam.UserName != user.UserName)
+            if (userParam.Login != user.Login)
             {
                 // UserName has changed so check if the new UserName is already taken
-                if (_userContext.Users.Any(x => x.UserName == userParam.UserName))
-                    throw new Exception("Username " + userParam.UserName + " is already taken");
+                if (_userContext.Users.Any(x => x.Login == userParam.Login))
+                    throw new Exception("Username " + userParam.Login + " is already taken");
             }
 
             // update user properties
             user.FirstName = userParam.FirstName;
             user.LastName = userParam.LastName;
-            user.UserName = userParam.UserName;
+            user.Login = userParam.Login;
 
             // update password if it was entered
             if (!string.IsNullOrWhiteSpace(password))
@@ -171,12 +168,12 @@ namespace LernApi.Services
         public User Create(UserInfo userInfo)
         {
             var password = userInfo.Password;
-            var username = userInfo.UserName;
+            var username = userInfo.Login;
 
             if (string.IsNullOrWhiteSpace(password))
                 throw new Exception("Password is required");
 
-            if (_userContext.Users.Any(x => x.UserName == username))
+            if (_userContext.Users.Any(x => x.Login == username))
                 throw new Exception("Username \"" + username + "\" is already taken");
 
             var user = _mapper.Map<User>(userInfo);
